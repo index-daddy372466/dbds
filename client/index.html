@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBDS</title>
+</head>
+<body>
+    <!-- abstract form - create database -->
+     <section id="creation-container">
+        <h1>DBDS</h1>
+        <form action="#" id="form" class="form-class">
+            <!-- db type - relational/non-relational -->
+             <label for="type">Database Type</label>
+             <input type="text" name="type" id="db-type">
+            <!-- db name -->
+            <label for="name">Database Name</label>
+             <input type="text" name="name" id="db-name">
+            <!-- schemas - option to add more-->
+            <label for="schema">Schemas</label>
+            <ul id="schema-conainer">
+                <li><input type="text" value="public" name="schema"></li>
+                <li><input type="text" placeholder="Enter new Schema" name="schema"><span>REMOVE</span></li>
+            </ul>
+            <button>ADD</button>
+            <label for="table">Database Tables</label>
+                <!-- relations by schema -->
+                 <ul id="relation-container">
+                    
+                 </ul>
+                <!-- columns by table -->
+                <label for="column">Database Columns</label>
+                <ul id="table-container">
+                    
+                </ul>
+                <!-- submit/write database -->
+                 <button type="submit">WRITE DB</button>
+        </form>
+     </section>
+</body>
+</html>
