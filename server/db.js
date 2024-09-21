@@ -21,5 +21,15 @@ const pool = new Pool({
   port: process.env.DBP,
   password: process.env.DBPD,
 });
+const tempPool = (DBN) => {
+  const temppool = new Pool({
+    database: DBN,
+    user: process.env.DBU,
+    host: process.env.DBH,
+    port: process.env.DBP,
+    password: process.env.DBPD,
+  });
+  return temppool
+}
 
-module.exports = { pool };
+module.exports = { pool, tempPool };
