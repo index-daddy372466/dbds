@@ -32,10 +32,11 @@ app.route('/api/db/write').post(async(req,res)=>{
         console.log(createSchema)
     }
 
-
     res.send('db written')
 })
 
 app.listen(PORT,()=>{
     console.log('listeng on port ' + PORT)
 })
+
+

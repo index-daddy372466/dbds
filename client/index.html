@@ -25,7 +25,7 @@
         <!-- schemas - option to add more-->
         <div class="form-column">
           <label for="schema">Schemas</label>
-          <ul id="schema-conainer">
+          <ul id="schema-container">
             <li>
               <input
                 type="text"
@@ -40,13 +40,15 @@
         <label for="table">Database Tables</label>
         <!-- relations by schema -->
         <div class="form-column">
-            <ul id="rel ation-container"></ul>
+            <ul id="table-container hide-section"></ul>
         </div>
         <!-- columns by table -->
         <label for="column">Database Columns</label>
         <div class="form-column">
-            <ul id="table-container"></ul>
-        </div>
+            <ul id="column-container hide-section">
+
+            </ul>
+        </div>         
         <!-- submit/write database -->
         <button type="submit">WRITE DB</button>
       </form>
