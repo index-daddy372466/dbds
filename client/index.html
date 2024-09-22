@@ -14,12 +14,12 @@
         <!-- db type - relational/non-relational -->
         <div class="form-column">
           <label for="type">Database Type</label>
-          <input type="text" name="type" id="db-type" />
+          <input type="text" name="type" class="stype" id="db-type" />
         </div>
         <!-- db name -->
         <div class="form-column">
           <label for="name">Database Name</label>
-          <input type="text" name="name" id="db-name" />
+          <input type="text" name="name" class="sname" id="db-name" />
         </div>
 
         <!-- schemas - option to add more-->
@@ -31,16 +31,19 @@
                 type="text"
                 placeholder="Enter new Schema"
                 name="schema"
+                class="sschema"
               /><span>REMOVE</span>
             </li>
           </ul>
         </div>
 
-        <button>ADD</button>
+        <span>ADD</span>
         <label for="table">Database Tables</label>
         <!-- relations by schema -->
         <div class="form-column">
-            <ul id="table-container hide-section"></ul>
+            <ul id="table-container" class="hide-section">
+              <!-- li - table-list-item -->
+            </ul>
         </div>
         <!-- columns by table -->
         <label for="column">Database Columns</label>
@@ -53,5 +56,6 @@
         <button type="submit">WRITE DB</button>
       </form>
     </section>
+    <script src="main.js"></script>
   </body>
 </html>
