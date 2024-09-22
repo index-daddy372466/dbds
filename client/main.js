@@ -2,7 +2,6 @@ const submit = document.querySelector('button[type=submit]')
 const namer = document.querySelector('.sname')
 const schema = document.querySelector('.sschema')
 const tableContainer = document.querySelector('#table-container')
-let table;
 
 
 schema.addEventListener('change',e=>{
@@ -17,16 +16,16 @@ schema.addEventListener('change',e=>{
         console.log(input)
         li.classList.add('table-list-item');
         input.classList.add('stable');
-        table = input;
         tableContainer.appendChild(li);
-        input.appendChild(input);
-    }
+        li.appendChild(input);
+    }   
     })
 
 
 // write db
 submit.onclick = async e => {
-    const body = {name:namer,table:table,schema:schema}
+    let table = document.querySelector('.stable')
+    const body = {name:namer.value,table:table.value,schema:schema.value}
     e.preventDefault();
     await fetch('/api/db/write',{method:'POST',headers:{
         'Content-Type':'application/json'

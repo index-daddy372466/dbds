@@ -14,8 +14,8 @@ app.use(express.static(path.resolve(__dirname, "../client")));
 
 // route
 app.route("/api/db/write").post(async (req, res) => {
-  const { type, name, schema } = req.body;
-  console.log(req.body);
+  const { name, schema, table } = req.body;
+  console.log(req.body)
   // create db
   let createDB = await pool.query(`create database ${name};`);
   console.log(createDB);
@@ -33,7 +33,10 @@ app.route("/api/db/write").post(async (req, res) => {
     console.log(createSchema);
   }
 
-  res.send({ data: req.body });
+  // create table
+  let createTable = await tempPool(name).query(`create table ${table}();`)
+  console.log(createTable)
+  res.json({ data: req.body });
 });
 
 app.listen(PORT, () => {
